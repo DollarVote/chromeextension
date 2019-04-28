@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "DollarVote",
+  "description": "DollarVote informs of how your daily purchases impact causes you support.",
+  "version": "1",
+  "content_scripts": [{
+    "js": ["index.js"],
+    "matches": ["https://www.amazon.com/s/*", "https://www.amazon.com/s*"],
+    "all_frames": true}],
+  "permissions": [
+    "activeTab"
+  ],
+  "short_name": "React App",
+  "description": "DollarVote informs of how your daily purchases impact causes you support.",
+  "author": "Vasudev"
+//  "display": "standalone"
+////,
+////  "theme_color": "#000000",
+////  "background_color": "#ffffff"
+
+}
