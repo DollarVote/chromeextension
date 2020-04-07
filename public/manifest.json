@@ -1,15 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 2,
+
+  "name": "Dollar Vote",
+  "description": "vote with your dollars",
+  "version": "0.0.1",
+
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "permissions": ["https://www.amazon.com/s/*", "https://www.amazon.com/s*",  "activeTab"],
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "matches": ["https://www.amazon.com/s/*", "https://www.amazon.com/s*"],
+      "js": ["script.js"]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "web_accessible_resources":["index.js", "index.css", "donations.js", "DonationPopover.js"],
+  "icons": {
+    "16": "logo_green.png",
+    "48": "logo_green.png",
+    "128": "logo_green.png"
+  },
+  "permissions": [
+  ]
 }
