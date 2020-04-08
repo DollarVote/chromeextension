@@ -13,10 +13,10 @@
   "content_scripts": [
     {
       "matches": ["https://www.amazon.com/s/*", "https://www.amazon.com/s*"],
-      "js": ["script.js"]
+      "css": ["/static/css/content.css"],
+      "js": ["/static/js/content.js"]
     }
   ],
-  "web_accessible_resources":["index.js", "index.css", "donations.js", "DonationPopover.js"],
   "icons": {
     "16": "logo_green.png",
     "48": "logo_green.png",

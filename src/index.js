@@ -20,7 +20,8 @@ if (viewport) viewport.prepend(app);
 // Render the <App /> component.
 // ReactDOM.render(<App />, document.getElementById('root'));
 // registerServiceWorker();
-ReactDOM.render(breakdown.map((company) => <DonationPopover {...company}/>), document.getElementById('root'));
+//NEED TO CHANGE THE ID OF THIS ELEM TO GET THE RIGHT RESULT
+ReactDOM.render(breakdown.map((company) => <DonationPopover {...company}/>), document.getElementById('a-page'));
 
 
 
