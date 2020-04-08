@@ -1,5 +1,5 @@
 import React from 'react';
-import Chart from 'react-google-charts'
+import { VictoryPie } from 'victory';
 
 
 class DonationChart extends React.Component {
@@ -9,18 +9,13 @@ class DonationChart extends React.Component {
     }
 
     render() {
-        let donationBreakdown = [["Support", "Percentage Donations"]].concat(this.props.donations);
         return (
-            <Chart
-                width={'400px'}
-                height={'250px'}
-                chartType="PieChart"
-                loader={<div>Loading Chart</div>}
-                data={donationBreakdown}
-                options={{
-                    title: 'Company Donations',
-                }}
-                rootProps={{ 'data-testid': '1' }}
+            <VictoryPie
+                data={[
+                    { x: "Cats", y: 35 },
+                    { x: "Dogs", y: 40 },
+                    { x: "Birds", y: 55 }
+                ]}
             />
         )
     }

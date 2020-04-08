@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import PieChart from './PieChart';
+import DonationChart from './PieChart';
 import './styles/politicalCard.css';
 
 class PopoverContent extends React.Component {
@@ -36,7 +36,7 @@ class PopoverContent extends React.Component {
 
                     </CardContent>
                     <div>
-                        <PieChart donations={this.props.donations} className="center-div" align="center"/>
+                        <DonationChart className="center-div" align="center"/>
                     </div>
                 </div>
             </Card>
