@@ -4,26 +4,6 @@ import './index.css';
 import breakdown from './testData/donations.js'
 import DonationPopover from './DonationPopover.js'
 import App from './App.js'
-// import registerServiceWorker from './registerServiceWorker';
-
-// Get the element to prepend our app to. This could be any element on a specific website or even just `document.body`.
-const viewport = document.body;
-// Create a div to render the <App /> component to.
-const app = document.createElement('div');
-
-// Set the app element's id to `root`. This is the same as the element that create-react-app renders to by default so it will work on the local server too.
-app.id = 'root';
-
-// Prepend the <App /> component to the viewport element if it exists. You could also use `appendChild` depending on your needs.
-viewport.prepend(app);
-
-// Render the <App /> component.
-ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();
-//NEED TO CHANGE THE ID OF THIS ELEM TO GET THE RIGHT RESULT
-ReactDOM.render(breakdown.map((company) => <DonationPopover {...company}/>), document.getElementById('root'));
-
-
 
 var allProducts = document.getElementsByClassName("s-result-list sg-row")[0].children;
 console.log("5");
@@ -41,7 +21,7 @@ for (var i = 0; i < allProducts.length; i++) {
 	    	const app = document.createElement('div');
 	    	app.id = 'root';
 	   		insertionPortion.appendChild(app);
-	    	ReactDOM.render(breakdown.map((company) => <DonationPopover {...company}/>), app);
+	    	ReactDOM.render(<DonationPopover {...breakdown[i%2]}/>, app);
 	    	var companyName = insertionPortion.innerText;
 	    	console.log(companyName);
 		}
