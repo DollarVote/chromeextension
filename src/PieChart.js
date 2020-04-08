@@ -11,11 +11,11 @@ class DonationChart extends React.Component {
     render() {
         return (
             <VictoryPie
+                colorScale={["tomato", "green"]}
                 data={[
-                    { x: "Cats", y: 35 },
-                    { x: "Dogs", y: 40 },
-                    { x: "Birds", y: 55 }
-                ]}
+                    { x: "Causes you don't support", y: 35 },
+                    { x: "Causes you support", y: 65 }
+                    ]}
             />
         )
     }
