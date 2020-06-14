@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Popover from '@material-ui/core/Popover';
+import {Popover, Button, Text, Pane} from 'evergreen-ui';
+// import Button from '@material-ui/core/Button';
+// import Popover from '@material-ui/core/Popover';
 import toRenderProps from 'recompose/toRenderProps';
 import withState from 'recompose/withState';
 import PopoverContent from './PopoverContent.js';
@@ -34,9 +35,26 @@ function DonationPopover(props) {
                              onClick={event => {
                                  updateAnchorEl(event.currentTarget);
                              }}/>
+                            <Popover
+                                content={
+                                    <Pane
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    flexDirection="column"
+                                    >
+                                    <PopoverContent 
+                                        title={props.title}
+                                        donations={props.donations}
+                                        causes={props.causes}/>
+                                    </Pane>
+                                }
+                                >
+                                <Button>Trigger Popover</Button>
+                            </Popover>
 
 
-                        <Popover
+                        {/* <Popover
                             id="render-props-popover"
                             open={open}
                             anchorEl={anchorEl}
@@ -55,7 +73,7 @@ function DonationPopover(props) {
                             <PopoverContent title={props.title}
                                             donations={props.donations}
                                             causes={props.causes}/>
-                        </Popover>
+                        </Popover> */}
                     </React.Fragment>
                 );
             }}

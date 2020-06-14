@@ -1,9 +1,7 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import DonationChart from './PieChart';
-import './styles/politicalCard.css';
+import { Pane, Heading, UnorderedList, ListItem } from 'evergreen-ui';
+import { ProgressBar }  from './components/progressBar';
+import './styles/popoverContents.css';
 
 class PopoverContent extends React.Component {
 
@@ -13,33 +11,31 @@ class PopoverContent extends React.Component {
 
     render() {
         return (
-
-            <Card  className="politicalCard">
-                <div className="politicalCard">
-                    <CardContent>
-                        <h1
-                            // gutterBottom variant="h5"
-                            // component="h2"
-                            // className="politicalTitle"
-                            align="center"
-                        >
-                            {this.props.title}
-                        </h1>
-                        <h3 align="center">Causes you don't support.</h3>
-                        <ul>
-                            {this.props.causes.bad.map((cause) => <li>{cause}</li>)}
-                        </ul>
-                        <h3 align="center">Causes you do support.</h3>
-                        <ul>
-                            {this.props.causes.good.map((cause) => <li>{cause}</li>)}
-                        </ul>
-
-                    </CardContent>
-                    <div>
-                        <DonationChart className="center-div" align="center"/>
-                    </div>
-                </div>
-            </Card>
+            <Pane
+                margin={20}
+                width={220}
+            >
+                  <h1 className="companyName">{this.props.title}</h1>
+                  {/* <div className="divider"/> */}
+                  {/* <h2 className="companyScore">-1.0</h2> */}
+                  <ProgressBar width={220} percent={0.6}/>
+                  <div className="descriptionPoints">
+                    <UnorderedList
+                        icon="cross"
+                        iconColor="success"
+                    >
+                        {this.props.causes.bad.map((cause) =>
+                        <ListItem>{cause}</ListItem>)}
+                    </UnorderedList>
+                    <UnorderedList
+                        icon="tick"
+                        iconColor="danger"
+                    >
+                        {this.props.causes.good.map((cause) => 
+                        <ListItem>{cause}</ListItem>)}
+                    </UnorderedList>
+                  </div>
+            </Pane>
         )
     };
 }

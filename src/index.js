@@ -5,7 +5,9 @@ import breakdown from './testData/donations.js'
 import DonationPopover from './DonationPopover.js'
 import App from './App.js'
 
-var allProducts = document.getElementsByClassName("s-result-list sg-row")[0].children;
+console.log(document.getElementsByClassName("s-result-list sg-row s-m")[0])
+console.log(document.getElementsByClassName("s-result-list sg-row")[1])
+var allProducts = document.getElementsByClassName("s-main-slot s-result-list sg-row")[0].children;
 for (var i = 0; i < allProducts.length; i++) {
     console.log("iter: " + i.toString());
     var currProduct = allProducts[i];
@@ -30,6 +32,7 @@ for (var i = 0; i < allProducts.length; i++) {
 
 //returns component.child[0] x X where if X = 3 is component.child[0].child[0].child[0]
 function check_for_xth_child(component, x) {
+	console.log("hello")
 	for (var j = 0; j < x; j++) {
 		if (!component) {
 			return null;
