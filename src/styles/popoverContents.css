@@ -28,6 +28,11 @@
     margin-bottom: 10px;
 }
 
+.progressBar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .card {
     minWidth: 275,
 }

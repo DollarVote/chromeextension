@@ -16,8 +16,6 @@ class PopoverContent extends React.Component {
                 width={220}
             >
                   <h1 className="companyName">{this.props.title}</h1>
-                  {/* <div className="divider"/> */}
-                  {/* <h2 className="companyScore">-1.0</h2> */}
                   <ProgressBar width={220} percent={0.6}/>
                   <div className="descriptionPoints">
                     <UnorderedList
