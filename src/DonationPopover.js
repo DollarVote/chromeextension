@@ -35,6 +35,7 @@ function DonationPopover(props) {
                              onClick={event => {
                                  updateAnchorEl(event.currentTarget);
                              }}/>
+                            {console.log("hello" + props)}
                             <Popover
                                 content={
                                     <Pane
@@ -44,9 +45,9 @@ function DonationPopover(props) {
                                     flexDirection="column"
                                     >
                                     <PopoverContent 
-                                        title={props.title}
-                                        donations={props.donations}
-                                        causes={props.causes}/>
+                                        title={props.issue}
+                                        donations={props.issue}
+                                        causes={props.blm}/>
                                     </Pane>
                                 }
                                 >

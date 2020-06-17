@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import breakdown from './testData/donations.js'
 import DonationPopover from './DonationPopover.js'
+import axios from "axios";
 import App from './App.js'
+import { API_URL } from "./constants";
 
 console.log(document.getElementsByClassName("s-result-list sg-row s-m")[0])
 console.log(document.getElementsByClassName("s-result-list sg-row")[1])
@@ -20,9 +22,20 @@ for (var i = 0; i < allProducts.length; i++) {
 		if (insertionPortion) {
 	    	const app = document.createElement('div');
 	    	app.id = 'root';
-	   		insertionPortion.appendChild(app);
-	    	ReactDOM.render(<DonationPopover {...breakdown[i%2]}/>, app);
-	    	var companyName = insertionPortion.innerText;
+			insertionPortion.appendChild(app);
+			console.log(insertionPortion)
+			axios.get(API_URL, {
+				params: {
+					company: 1
+				}
+			}).then(function (response) {
+				const impactData = response.data.fields;
+				console.log(response.data.fields)
+				ReactDOM.render(<DonationPopover data={impactData}/>, app);
+				var companyName = insertionPortion.innerText;
+				console.log(companyName)
+			})
+
 		}
 	}
 }

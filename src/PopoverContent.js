@@ -11,29 +11,32 @@ class PopoverContent extends React.Component {
 
     render() {
         return (
+            <div> 
+            
             <Pane
                 margin={20}
                 width={220}
             >
                   <h1 className="companyName">{this.props.title}</h1>
-                  <ProgressBar width={220} percent={0.6}/>
+                  <ProgressBar width={220} percent={0.6} className="progress"/>
                   <div className="descriptionPoints">
-                    <UnorderedList
+                    {/* <UnorderedList
                         icon="cross"
-                        iconColor="success"
+                        iconColor="danger"
                     >
                         {this.props.causes.bad.map((cause) =>
                         <ListItem>{cause}</ListItem>)}
                     </UnorderedList>
                     <UnorderedList
                         icon="tick"
-                        iconColor="danger"
+                        iconColor="success"
                     >
                         {this.props.causes.good.map((cause) => 
                         <ListItem>{cause}</ListItem>)}
-                    </UnorderedList>
+                    </UnorderedList> */}
                   </div>
             </Pane>
+            </div>
         )
     };
 }
